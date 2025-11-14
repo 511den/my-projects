@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои проекты</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-title {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .github-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Мои проекты</h1>
+            <p class="subtitle">Ссылки на GitHub-репозитории</p>
+        </header>
+
+        <div class="projects-grid">
+            <!-- Проект 1 -->
+            <div class="project-card">
+                <h2 class="project-title">51Ai</h2>
+                <p class="project-description">
+                    Нейросеть, Обучается на типе данных вопрос|ответ или на обычных текстах. (c#)
+                </p>
+                <a href="https://github.com/511den/511AI/releases" class="github-link" target="_blank">
+                    Открыть в GitHub (Windows)
+                </a>
+            </div>
+
+            <!-- Проект 2 -->
+            <div class="project-card">
+                <h2 class="project-title">51dmod</h2>
+                <p class="project-description">
+                    Мод на нейрости по типу: deepseek, chatgpt и тд (главное чтобы принимали .java файлы) мод позволяет удобно програмировать и просто баловатся с нейросетью. (пароль админки NTEx)
+                </p>
+                <a href="https://511den.github.io/51dMod/" class="github-link" target="_blank">
+                    Открыть сайт (Windows,Linux,MacOs)
+                </a>
+                </p>
+                <a href="https://github.com/511den/51dMod" class="github-link" target="_blank">
+                    GitHub-репозиторий
+                </a>
+            </div>
+
+            <!-- Проект 3 -->
+            <div class="project-card">
+                <h2 class="project-title">51cord</h2>
+                <p class="project-description">
+                   Не доделаный мессенджер (c++) работает по твоему айпи и порту который ты задашь (пароль от сервера 111)
+                </p>
+                <a href="https://github.com/511den/51cord/releases/tag/main" class="github-link" target="_blank">
+                    Открыть в GitHub(Windows,по желанию можно перекомплировать на Linux И android (файл "code"))
+                </a>
+            </div>
+
+            <!-- Добавьте дополнительные проекты по аналогии -->
+        </div>
+    </div>
+
+    <script>
+        // Небольшая анимация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
